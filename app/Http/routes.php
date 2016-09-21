@@ -4,7 +4,7 @@ Route::get('/', function(){
     return redirect('/posts');
 });
 
-Route::get('/view/all', 'PostController@indexAll');
+Route::get('/view', 'PostController@indexAll');
 Route::get('/view/{id}', 'PostController@view');
 
 Route::group(['middleware'=>'web'], function(){
