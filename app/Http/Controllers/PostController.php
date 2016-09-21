@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'view', 'indexAll']]);
     }
 
     /**
@@ -80,7 +80,7 @@ class PostController extends Controller
     {
         return Post::find($id);
     }
-    
+
     public function show($slug)
     {
         $post = Post::findBySlug($slug);
